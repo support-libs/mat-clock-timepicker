@@ -1,0 +1,23 @@
+<div class="mat-time vertical-time">
+  <mat-toolbar class="mat-timepicker-time-container" [color]="color">
+
+      <div class="mat-timepicker-selected-time">
+          <span [class]="currentView === VIEW_HOURS ? 'active': ''" (click)="setCurrentView(VIEW_HOURS)">{{ formatHour() }}:</span>
+          <span [class]="currentView === VIEW_MINUTES ? 'active': ''" (click)="setCurrentView(VIEW_MINUTES)">{{ formatMinute() }}</span>
+      </div>
+      <div class="mat-timepicker-selected-ampm" *ngIf="userTime.format === 12">
+          <span (click)="setMeridien('AM')" [class]="userTime.meriden === 'AM' ? 'active' : ''">AM</span>
+          <span (click)="setMeridien('PM')" [class]="userTime.meriden === 'PM' ? 'active' : ''">PM</span>
+      </div>
+
+  </mat-toolbar>
+
+  <div class="mat-time-content">
+      <mat-clock [color]="color" class="mat-animation-zoom" [userTime]="userTime" (userTimeChange)="emituserTimeChange($event)" [(currentView)]="currentView" (viewChange)="setCurrentView($event)"></mat-clock>
+
+      <div styles="{align-self: flex-end;}">
+          <button mat-button (click)="revert()">{{revertLabel}}</button>
+          <button mat-button [color]="color" (click)="submit()">{{submitLabel}}</button>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "tslint-angular"
+    ],
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            [
+                "dir",
+                "dir"
+            ],
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "mat",
+            [
+                "cmp",
+                "cmp"
+            ],
+            "kebab-case"
+        ]
+    }
+}
