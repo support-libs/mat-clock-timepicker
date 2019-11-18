@@ -1,6 +1,6 @@
 {
     "name": "mat-clock-timepicker",
-    "private": true,
+    "private": false,
     "version": "0.0.1",
     "description": "Build an Angular library compatible with AoT compilation and Tree shaking like an official package",
     "main": "./bundles/mat-clock-timepicker.umd.js",
